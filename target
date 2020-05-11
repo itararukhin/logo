@@ -52,7 +52,7 @@ end
 to randomTarget
 cg
 sety (random 300) - 150
-setx 50 + random 250
+setx 50 + random 200
 target
 setx 0
 sety 0
