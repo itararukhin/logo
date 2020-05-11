@@ -1,0 +1,59 @@
+to fillkr
+rt 90
+fd 5
+fill
+bk 5
+lt 90
+end
+
+to kr :color :size
+pd
+setc :color
+repeat 360[
+	fd :size
+	rt 1
+]
+pu
+fillkr
+end
+
+to sc :color :size
+lt 90
+make "offset 114,58865 / 2 * :size
+fd :offset
+rt 90
+kr :color :size
+rt 90
+fd :offset
+lt 90
+end
+
+to krsize :color :size
+pd
+setc :color
+repeat 180[
+	fd :size
+	rt 1
+]
+pu
+end
+
+
+to target
+make "size 1
+make "color 105
+repeat 10[
+    sc :color :size
+    make "size :size - 0.1
+    make "color :color - 10 
+]
+end
+
+to randomTarget
+cg
+sety (random 300) - 150
+setx 50 + random 250
+target
+setx 0
+sety 0
+end
