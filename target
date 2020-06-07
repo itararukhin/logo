@@ -38,7 +38,6 @@ repeat 180[
 pu
 end
 
-
 to target
 make "size 1
 make "color 105
@@ -50,7 +49,6 @@ repeat 10[
 end
 
 to randomTarget
-cg
 sety (random 300) - 150
 setx 50 + random 250
 target
@@ -58,8 +56,7 @@ setx 0
 sety 0
 end
 
-to arrow
-make "l 50 + random 50
+to arrow :l
 pd
 fd :l
 rt 170
@@ -73,4 +70,22 @@ pu
 bk 10
 rt 170
 bk :l
+end
+
+to ask_params
+question "Введите_угол
+make "angle answer
+question "Введите_расстояние_в_стрелках
+make "dist answer
+end
+
+to main
+cg
+randomTarget
+make "l 50 + random 50
+arrow :l
+ask_params
+rt :angle
+fd :l * (:dist - 1)
+arrow :l
 end
