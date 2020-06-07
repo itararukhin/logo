@@ -52,8 +52,25 @@ end
 to randomTarget
 cg
 sety (random 300) - 150
-setx 50 + random 200
+setx 50 + random 250
 target
 setx 0
 sety 0
+end
+
+to arrow
+make "l 50 + random 50
+pd
+fd :l
+rt 170
+fd 10
+pu
+bk 10
+rt 20
+pd 
+fd 10
+pu
+bk 10
+rt 170
+bk :l
 end
